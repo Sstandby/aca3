@@ -57,8 +57,8 @@ public class AlquilerService {
         AtomicBoolean insert = new AtomicBoolean(false);
 
         alquilerList.forEach(alquilar-> {
-            if(AutomovilService().validatePlaca(alquilar.getDocumentoCliente) &&
-               ClienteService().validatePlaca(alquilar.getDocumentoCliente)) insert.set(true);
+            if(new AutomovilService().validatePlaca(alquilar.getDocumentoCliente()) &&
+               new ClienteService().validateDocument(alquilar.getDocumentoCliente())) insert.set(true);
         });
 
         if (insert.get()) alquilerList.add(alquilado);

@@ -11,8 +11,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ClienteService {
     private static List<Cliente> clienteList = new ArrayList<>();
 
-    public boolean validatePlaca(String placa){
-      return clientelList.stream().anyMatch(o -> placa.equals(o.getPlaca()));
+    public boolean validateDocument(String dni){
+      return clienteList.stream().anyMatch(o -> dni.equals(o.getNumeroDocumento()));
     }
 
     public void handlerMenuInsertCliente() {
