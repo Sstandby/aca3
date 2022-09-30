@@ -3,7 +3,7 @@ import Services.ClienteService;
 import Services.AlquilerService;
 import Utils.Utils;
 
-public class ProjectForStand {
+public class aca3 {
     public static void main(String[] args) {
         int option;
         do {

@@ -26,7 +26,7 @@ public class AutomovilService {
         if(insertAutomovil(automovil))
             System.out.println("Se ha insertado el automovil");
         else
-            System.out.println("No se ha poido insertar el automovils");
+            System.out.println("No se ha podido insertar el automovil porque ya existe en nuestra base de datos");
     }
 
     public void handlerMenuShowAutomovil() {

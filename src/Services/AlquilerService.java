@@ -22,9 +22,9 @@ public class AlquilerService {
         );
 
         if(insertAlquiler(alquiler))
-            System.out.println("Se ha insertado el automovil");
+            System.out.println("Se ha insertado el alquiler");
         else
-            System.out.println("No se ha poido insertar el alquiler porque no existe el DNI o la placa del auto.");
+            System.out.println("No se ha podido insertar el alquiler porque no existe el DNI o la placa del auto.");
     }
 
     public void handlerMenuShowAlquiler() {
@@ -56,12 +56,10 @@ public class AlquilerService {
     public boolean insertAlquiler(Alquiler alquilado) {
         AtomicBoolean insert = new AtomicBoolean(false);
 
-        alquilerList.forEach(alquilar-> {
-            if(new AutomovilService().validatePlaca(alquilar.getDocumentoCliente()) &&
-               new ClienteService().validateDocument(alquilar.getDocumentoCliente())) insert.set(true);
-        });
+        if(new AutomovilService().validatePlaca(alquilado.getPlacaAutomovil()) &&
+           new ClienteService().validateDocument(alquilado.getDocumentoCliente())) insert.set(true);
 
-        if (insert.get()) alquilerList.add(alquilado);
+        if (insert.get())  alquilerList.add(alquilado);
 
         return insert.get();
     }

@@ -25,7 +25,7 @@ public class ClienteService {
         );
 
         if(insertCliente(clientes))
-            System.out.println("Se ha insertado el automovil");
+            System.out.println("Se ha insertado el cliente");
         else
             System.out.println("No se ha podido insertar el cliente ya que ya existe en nuestra base de datos.");
     }
